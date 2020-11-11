@@ -7,6 +7,7 @@ fileName = input("Enter the name of your base image (with extension)\nExample: s
 writingList = input("Enter the name of file containing names to write (with extension): ")
 fontName = input("Enter the name of the font you want to use (with extension)\nEnter: ")
 fontSize = int(input("Enter font size in pts: "))
+distY = input("Enter Y coordinate: ")
 
 names = open(writingList, 'r')
 imgFont = ImageFont.truetype(fontName, fontSize)
@@ -23,7 +24,7 @@ for line in content:
 
     editableImg = ImageDraw.Draw(img)
     w, h = editableImg.textsize(certText, imgFont)
-    editableImg.text(((imgWidth - w) / 2, 625), certText, (255, 255, 255), font=imgFont)
+    editableImg.text(((imgWidth - w) / 2, distY), certText, (255, 255, 255), font=imgFont)
     
     img.save('output/result.png')
     os.rename('output/result.png', f'output/{certText.strip()}.png')
