@@ -7,7 +7,7 @@ fileName = input("Enter the name of your base image (with extension)\nExample: s
 writingList = input("Enter the name of file containing names to write (with extension): ")
 fontName = input("Enter the name of the font you want to use (with extension)\nEnter: ")
 fontSize = int(input("Enter font size in pts: "))
-distY = input("Enter Y coordinate: ")
+distY = int(input("Enter Y coordinate: "))
 
 names = open(writingList, 'r')
 imgFont = ImageFont.truetype(fontName, fontSize)
